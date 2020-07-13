@@ -190,16 +190,16 @@
 //         break;
 // };
 
-// Циклы
-let а = 11;
-// сначала проверяет условие, если оно выполняется, то выполняет код в теле цыкла
-while (а <= 10) {
-    // цикл делает проверку условия
-    а += 2;
-    console.log("Сообщение", а);
-};
+// // Циклы
+// let а = 11;
+// // сначала проверяет условие, если оно выполняется, то выполняет код в теле цыкла
+// while (а <= 10) {
+//     // цикл делает проверку условия
+//     а += 2;
+//     console.log("Сообщение", а);
+// };
 
-а = 20;
+// а = 20;
 
 // исполнит тело цикла хотя бы один раз перед проверкой условия
 // do {
@@ -222,9 +222,91 @@ while (а <= 10) {
 //     console.log(i);
 // };
 
-for (let i = 2; i <= 20; i += 3) {
-    if (i === 14) {
-        continue;
+// for (let i = 2; i <= 20; i += 3) {
+//     if (i === 14) {
+//         continue;
+//     };
+//     console.log(i);
+// };
+
+
+// Задание 1
+    // let name = "Генератор защитного поля";
+    // let price = "1000";
+
+    // price = "2000";
+
+    // console.log(`Выбран ${name}, цена за штуку ${price} кредитов`);
+
+
+// Задание 2
+
+    // const total = 100;
+    // const ordered = 40;
+
+    // if (total >= ordered) {
+    //     console.log("Заказ оформлен, с вами свяжется менеджер");
+    //     alert("Заказ оформлен, с вами свяжется менеджер"); // от меня
+    // } else {
+    //     console.log("На складе недостаточно товаров!");
+    //     alert("На складе недостаточно товаров!"); // от меня
+    // };
+
+// Задание 3
+
+    // const ADMIN_PASSWORD = 'jqueryismyjam';
+    // let message;
+
+    // prompt("Введите пароль");
+
+    // if (ADMIN_PASSWORD) {
+    //     message = 'Отменено пользователем!';
+    // } else if (ADMIN_PASSWORD = ADMIN_PASSWORD) {
+    //     message = 'Добро пожаловать!';
+    // } else {
+    //     message = 'Доступ запрещен, неверный пароль!';
+    // };
+
+    // alert(`${message}`);
+
+// Задание 4
+
+    // let credits = 23580;
+    // let pricePerDroid = 3000;
+    // let droids = prompt("К-во Дроидов");
+    // let totalprice;
+
+    // if (droids = false) {
+    //     console.log('Отменено пользователем!');
+    // } else {
+    //     totalprice = `${droids} * ${pricePerDroid}`;
+    // };
+
+    // if (totalprice > credits) {
+    //     console.log('Недостаточно средств на счету!');
+    // } else if (totalprice <= credits) {
+    //     credits = `${credits} - ${totalprice}`;
+    // };
+
+    // Задание 5
+
+    let country = prompt("Введите страну доставки");
+    
+    country = country.toUpperCase();
+    switch (country) {
+    case "Китай":
+        console.log(100);
+    break;
+    case "Чили":
+        console.log(250);
+    break;
+    case "Австралия":
+        console.log(170);
+    break;
+    case "Индия":
+        console.log("80 кредитов");
+    break;
+    case "Ямайка":
+        console.log("120 кредитов");
+    break;
     };
-    console.log(i);
-};
