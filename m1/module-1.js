@@ -255,7 +255,6 @@
 // let message;
 // let userPassword = prompt("Введите пароль");
 
-
 // if (userPassword === null) {
 //     message = 'Отменено пользователем!';
 // } else if (userPassword === ADMIN_PASSWORD) {
@@ -274,37 +273,40 @@
 // let totalprice;
 
 // if (droids === null) {
-//     alert("Отменено пользователем!");
-// } else if (droids > 0){
-//     totalprice =`${droids}` * `${pricePerDroid}`;
+//   alert("Отменено пользователем!");
+// } else {
+//   totalprice = `${droids}` * `${pricePerDroid}`;
+// };
+// if (typeof droids !== "number") {
+//   alert("Неправильный формат ввода");
 // };
 
-// if (credits >= totalprice){
-//     credits = `${credits}` - `${totalprice}`;
-//     alert(`Вы купили ${droids} дроидов, на счету осталось ${credits} кредитов.`);
+// if (credits >= totalprice) {
+//   credits = `${credits}` - `${totalprice}`;
+//   alert(`Вы купили ${droids} дроидов, на счету осталось ${credits} кредитов.`);
 // } else if (totalprice > credits) {
-//     alert("Недостаточно средств на счету!");
-// };
+//   alert("Недостаточно средств на счету!");
+// }
 
 // Задание 5
 
 // let country = prompt("Введите страну доставки");
-// // country = country.toUpperCase();
+// country = country.toUpperCase();
 
 // switch (country) {
-//   case "Китай":
+//   case "КИТАЙ":
 //     alert("Доставка в Китай будет стоить 100 кредитов");
 //     break;
-//   case "Чили":
+//   case "ЧИЛИ":
 //     alert("Доставка в Чили будет стоить 250 кредитов");
 //     break;
-//   case "Австралия":
+//   case "АВСТРАЛИЯ":
 //     alert("Доставка в Австралию будет стоить 170 кредитов");
 //     break;
-//   case "Индия":
+//   case "ИНДИЯ":
 //     alert("Доставка в Индию будет стоить 80 кредитов");
 //     break;
-//   case "Ямайка":
+//   case "ЯМАЙКА":
 //     alert("Доставка в Ямайку будет стоить 120 кредитов");
 //     break;
 //   default:
@@ -322,4 +324,3 @@
 // total = total + input;
 // console.log(total);
 // };
-
