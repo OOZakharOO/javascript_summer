@@ -227,13 +227,3 @@
 //     console.log("I'm jumping");
 // }
 // mainfunc(toGo, toRun, toJump)
-
-// Task 1
-
-const logItems = function(array) {
-  for () {}
-};
-
-logItems(['1-Mango', '2-Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
-
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
