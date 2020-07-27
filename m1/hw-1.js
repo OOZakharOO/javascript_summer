@@ -37,26 +37,26 @@
 
 // Задание 4
 
-// let credits = 23580;
-// let pricePerDroid = 3000;
-// let droids = prompt("К-во Дроидов");
-// let totalprice;
+let credits = 23580;
+let pricePerDroid = 3000;
+let droids = +prompt("К-во Дроидов");
+let totalprice;
 
-// if (droids === null) {
-//   alert("Отменено пользователем!");
-// } else {
-//   totalprice = `${droids}` * `${pricePerDroid}`;
-// };
-// if (typeof droids !== "number") {
-//   alert("Неправильный формат ввода");
-// };
-
-// if (credits >= totalprice) {
-//   credits = `${credits}` - `${totalprice}`;
-//   alert(`Вы купили ${droids} дроидов, на счету осталось ${credits} кредитов.`);
-// } else if (totalprice > credits) {
-//   alert("Недостаточно средств на счету!");
-// }
+if (droids === 0) {
+  alert("Отменено пользователем!");
+} else {
+  totalprice = droids * pricePerDroid;
+  if (credits >= totalprice) {
+    credits = credits - totalprice;
+    alert(
+      `Вы купили ${droids} дроидов, на счету осталось ${credits} кредитов.`
+    );
+  } else if (totalprice > credits) {
+    alert("Недостаточно средств на счету!");
+  } else {
+    alert("Неправильный формат ввода");
+  }
+}
 
 // Задание 5
 
@@ -94,3 +94,4 @@
 // total = total + input;
 // console.log(total);
 // };
+// alert(total);
