@@ -1,6 +1,6 @@
 "use strict";
 
-// task 1
+// // task 1
 
 // const user = {
 //   name: "Mango",
@@ -13,13 +13,13 @@
 // user.hobby = 'skydiving';
 // user.premium = false;
 
-// const allKeys = Object.entries(user);
+// const allKeys = Object.keys(user);
 
 // for (let key of allKeys) {
-//     console.log(`${key[0]}: ${key[1]}`);
+//     console.log(`${key[key]}: ${key[key]}`);
 // }
 
-// task 2
+// // task 2
 
 // const countProps = function(obj) {
 //     const allKeys = Object.keys(obj);
@@ -35,10 +35,20 @@
 
 // console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
 
-// task 3
+// // task 3
 
-// const findBestEmployee = function(employees) {
-
+// const findBestEmployee = function (employees) {
+//     const keys = Object.keys(employees);
+//     const values = Object.values(employees);
+//     let count = 0;
+//     let employee;
+//     for (let i = 0; i < values.length; i++) {
+//       if (values[i] > count) {
+//         employee = keys[i];
+//         count = values[i];
+//       }
+//     }
+//     return employee;
 //   };
 
 //   /*
@@ -50,7 +60,7 @@
 //       david: 35,
 //       helen: 1,
 //       lorence: 99,
-//     }),
+//     })
 //   ); // lorence
 
 //   console.log(
@@ -58,7 +68,7 @@
 //       poly: 12,
 //       mango: 17,
 //       ajax: 4,
-//     }),
+//     })
 //   ); // mango
 
 //   console.log(
@@ -67,35 +77,48 @@
 //       david: 21,
 //       kiwi: 19,
 //       chelsy: 38,
-//     }),
+//     })
 //   ); // lux
 
-// task 4
+// // task 4
 
-// const countTotalSalary = function (employees) {};
+// const countTotalSalary = function (employees) {
+//     let total = 0;
+//     //   1 variant
+//       const a = Object.values(employees);
+//       for (let key of a) {
+//         total += key;
+//       }
 
-// /*
-//  * Вызовы функции для проверки работоспособности твоей реализации.
-//  */
-// console.log(countTotalSalary({})); // 0
+//     //   2 variant
+//     for (let key in employees) {
+//       total += employees[key];
+//     }
+//     return total;
+//   };
 
-// console.log(
-//   countTotalSalary({
-//     mango: 100,
-//     poly: 150,
-//     alfred: 80,
-//   })
-// ); // 330
+//   /*
+//    * Вызовы функции для проверки работоспособности твоей реализации.
+//    */
+//   console.log(countTotalSalary({})); // 0
 
-// console.log(
-//   countTotalSalary({
-//     kiwi: 200,
-//     lux: 50,
-//     chelsy: 150,
-//   })
-// ); // 400
+//   console.log(
+//     countTotalSalary({
+//       mango: 100,
+//       poly: 150,
+//       alfred: 80,
+//     })
+//   ); // 330
 
-// // task 3
+//   console.log(
+//     countTotalSalary({
+//       kiwi: 200,
+//       lux: 50,
+//       chelsy: 150,
+//     })
+//   ); // 400
+
+// // task 5
 
 // const products = [
 //   { name: "Радар", price: 1300, quantity: 4 },
@@ -105,7 +128,14 @@
 // ];
 
 // const getAllPropValues = function (arr, prop) {
-//   // твой код
+//   const values = [];
+//   for (const item of arr) {
+//     let value = item[prop];
+//     if (value != undefined) {
+//       values.push(value);
+//     }
+//   }
+//   return values;
 // };
 
 // /*
@@ -117,7 +147,7 @@
 
 // console.log(getAllPropValues(products, "category")); // []
 
-// // task 6
+// task 6
 
 // const products = [
 //   { name: "Радар", price: 1300, quantity: 4 },
@@ -126,14 +156,12 @@
 //   { name: "Захват", price: 1200, quantity: 2 },
 // ];
 
-// const calculateTotalPrice = function (allProdcuts, productName) {
-//   // твой код
+// const calculateTotalPrice = function (allProducts, productName) {
 // };
 
 // /*
-//  * Вызовы функции для проверки работоспособности твоей реализации.
+//   Вызовы функции для проверки работоспособности твоей реализации.
 //  */
 // console.log(calculateTotalPrice(products, "Радар")); // 5200
 
 // console.log(calculateTotalPrice(products, "Дроид")); // 2800
-
