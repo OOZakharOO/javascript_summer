@@ -34,7 +34,6 @@
 // User.prototype.toShowName = function () {
 //   console.log(this.name);
 // };
-
 // const user1 = new User("Zakhar", 13);
 // const user2 = new User("Noname", 50);
 // user1.greet();
@@ -52,14 +51,14 @@
 //     this.age = age;
 //   }
 //   toShowName() {
-//     console.log(thisName);
+//     console.log(this.name);
 //   }
 //   updateName(val1 = "", val2 = 0, val3 = "Happy") {
 //     console.log((this.name = val1));
 //     console.log((this._age = val2));
 //     console.log(val3);
 //   }
-//   // get & set
+  // get & sets
 //   get age() {
 //     return this._age;
 //   }
@@ -95,4 +94,3 @@
 
 // const newSuperUser = new SuperNewUser("Zakhar2", 13, "1", 2);
 // console.log(newSuperUser);
-

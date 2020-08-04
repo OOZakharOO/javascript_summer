@@ -26,7 +26,7 @@
 // console.log(account.balance); // 19000
 // console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
 
-// task 2
+// // task 2
 
 // const inventory = {
 //   items: ["Knife", "Gas mask"],

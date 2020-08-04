@@ -167,7 +167,6 @@
 // addNewUser(18);
 // addNewUser("Hi");
 
-
 // const addNewUser1 = function (age) {
 //   if (age < 16 || age > 21) {
 //     return console.log("Мы не можем вас добавить");
