@@ -61,16 +61,24 @@
 // // task 3
 
 // class Storage {
-//   constructor({ items }) {
+//   constructor(items) {
 //     this.items = items;
-//     console.log(items);
 //   }
 
 //   getItems() {
-//     return storage;
+//     return this.items;
 //   }
-//   addItem(item) {}
-//   removeItem(item) {}
+//   addItem(item) {
+//     if (!this.items.includes(item)) return this.items.push(item);
+//   }
+//   removeItem(item) {
+//     for (let i = 0; i < this.items.length; i++) {
+//       if (this.items[i] === item) {
+//         this.items.splice(i, 1);
+//       }
+//     }
+//     return this.items;
+//   }
 // }
 
 // const storage = new Storage([
@@ -92,18 +100,24 @@
 // // task 4
 
 // class StringBuilder {
-//   constructor({ string }) {
+//   constructor(string) {
 //     this._value = string;
 //   }
 //   get value() {
 //     return this._value;
 //   }
 //   append(str) {
-//     builder = str + this._value;
-//     return builder;
+//     this._value = str + this._value;
+//     return this._value;
 //   }
-//   prepend(str) {}
-//   pad(str) {}
+//   prepend(str) {
+//     this._value = this._value + str;
+//     return this._value;
+//   }
+//   pad(str) {
+//     this._value = str + this._value + str;  
+//     return this._value;
+//   }
 // }
 
 // let builder = new StringBuilder(".");
@@ -117,81 +131,88 @@
 // builder.pad("=");
 // console.log(builder._value); // '=^.^='
 
-// Task 6
+// // Task 5
 
 // class Car {
-//     /*
-//      * Добавь статический метод `getSpecs(car)`,
-//      * который принимает объект-машину как параметр и выводит
-//      * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
-//      */
-  
-//     /*
-//      * Конструктор получает объект настроек.
-//      *
-//      * Добавь свойства будущеего экземпляра класса:
-//      *  speed - текущая скорость, изначально 0
-//      *  price - цена автомобиля
-//      *  maxSpeed - максимальная скорость
-//      *  isOn - заведен ли автомобиль, значения true или false. Изначально false
-//      *  distance - общий киллометраж, изначально 0
-//      */
-//     constructor() {}
-  
-//     /*
-//      * Добавь геттер и сеттер для свойства price,
-//      * который будет работать с свойством цены автомобиля.
-//      */
-  
-//     /*
-//      * Добавь код для того чтобы завести автомобиль
-//      * Записывает в свойство isOn значение true
-//      */
-//     turnOn() {}
-  
-//     /*
-//      * Добавь код для того чтобы заглушить автомобиль
-//      * Записывает в свойство isOn значение false,
-//      * и сбрасывает текущую скорость в 0
-//      */
-//     turnOff() {}
-  
-//     /*
-//      * Добавялет к свойству speed полученное значение,
-//      * при условии что результирующая скорость
-//      * не больше чем значение свойства maxSpeed
-//      */
-//     accelerate(value) {}
-  
-//     /*
-//      * Отнимает от свойства speed полученное значение,
-//      * при условии что результирующая скорость не меньше нуля
-//      */
-//     decelerate(value) {}
-  
-//     /*
-//      * Добавляет в поле distance киллометраж (hours * speed),
-//      * но только в том случае если машина заведена!
-//      */
-//     drive(hours) {}
+//   static getSpecs(car) {
+//     console.log(car.maxSpeed, car.speed, car.isOn, car.distance, car.price);
 //   }
-  
-//   const mustang = new Car({ maxSpeed: 200, price: 2000 });
-  
-//   mustang.turnOn();
-//   mustang.accelerate(50);
-//   mustang.drive(2);
-  
-//   Car.getSpecs(mustang);
-//   // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
-  
-//   mustang.decelerate(20);
-//   mustang.drive(1);
-//   mustang.turnOff();
-  
-//   Car.getSpecs(mustang);
-//   // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
-  
-//   console.log(mustang.price); // 2000
-//   mustang.price = 4000;
-//   console.log(mustang.price); // 4000
+
+//   constructor(car) {
+//     this.speed = 0;
+//     this._price = car.price;
+//     this.maxSpeed = car.maxSpeed;
+//     this.isOn = car.isOn;
+//     this.distance = 0;
+//   }
+//   get price() {
+//     return this._price;
+//   }
+//   set price(value) {
+//     return (this._price = value);
+//   }
+
+//   /*
+//    * Добавь код для того чтобы завести автомобиль
+//    * Записывает в свойство isOn значение true
+//    */
+//   turnOn() {
+//     return (this.isOn = true);
+//   }
+
+//   /*
+//    * Добавь код для того чтобы заглушить автомобиль
+//    * Записывает в свойство isOn значение false,
+//    * и сбрасывает текущую скорость в 0
+//    */
+//   turnOff() {
+//     return (this.isOn = false), (this.speed = 0);
+//   }
+
+//   /*
+//    * Добавялет к свойству speed полученное значение,
+//    * при условии что результирующая скорость
+//    * не больше чем значение свойства maxSpeed
+//    */
+//   accelerate(value) {
+//     this.speed += value;
+//     if (this.speed <= this.maxSpeed && this.isOn) return this.speed;
+//   }
+
+//   /*
+//    * Отнимает от свойства speed полученное значение,
+//    * при условии что результирующая скорость не меньше нуля
+//    */
+//   decelerate(value) {
+//     this.speed -= value;
+//     if (this.speed > 0) return this.speed;
+//   }
+
+//   /*
+//    * Добавляет в поле distance киллометраж (hours * speed),
+//    * но только в том случае если машина заведена!
+//    */
+//   drive(hours) {
+//     if (this.isOn) return (this.distance += hours * this.speed);
+//   }
+// }
+
+// const mustang = new Car({ maxSpeed: 200, price: 2000 });
+
+// mustang.turnOn();
+// mustang.accelerate(50);
+// mustang.drive(2);
+
+// Car.getSpecs(mustang);
+// // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
+
+// mustang.decelerate(20);
+// mustang.drive(1);
+// mustang.turnOff();
+
+// Car.getSpecs(mustang);
+// // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
+
+// console.log(mustang.price); // 2000
+// mustang.price = 4000;
+// console.log(mustang.price); // 4000

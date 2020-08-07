@@ -70,7 +70,7 @@
 // console.log(words.sort());
 // console.log(words.reverse());
 
-// redusce
+// reduse
 
 // array.method(callback[(acc, value, index, array)]);
 // console.log(num1.reduce((acc, num) => acc + num, 0));

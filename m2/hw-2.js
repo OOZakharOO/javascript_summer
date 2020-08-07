@@ -53,7 +53,7 @@
 // // Task3
 
 // const findLongestWord = function (string) {
-//   let array = string.split(' ');
+//   let array = string.split(" ");
 //   let word;
 //   let wordLength = 0;
 
@@ -78,7 +78,7 @@
 // // Task4
 
 // const formatString = function (string) {
-//   if (string.length < 40) return string;
+//   if (string.length <= 40) return string;
 //   return string.slice(0, 40) + "...";
 // };
 
@@ -99,7 +99,7 @@
 //     "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
 //   )
 // );
-// // вернется форматированная строка
+// вернется форматированная строка
 
 // // task5
 
