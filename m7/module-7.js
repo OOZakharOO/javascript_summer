@@ -41,5 +41,98 @@ list.appendChild(newLi);
 // list.removeChild(newLi);
 newLi.remove();
 
+const beforeList = document.createElement("a");
+beforeList.textContent = "1";
+
+const beginList = document.createElement("a");
+beginList.textContent = "2";
+
+const endList = document.createElement("a");
+endList.textContent = "3";
+
+const afterList = document.createElement("a");
+afterList.textContent = "4";
+
+list.style.border = "1px solid";
+list.insertAdjacentElement("afterbegin", beginList);
+list.insertAdjacentElement("beforebegin", beforeList);
+list.insertAdjacentElement("beforeend", endList);
+list.insertAdjacentElement("afterend", afterList);
+
 const newImage = image.cloneNode(true);
-list.insertAdjacentElement("afterand", newImage);
+list.insertBefore(newImage, endList);
+
+const desk = `<h2 style="color:green"> Hello! </h2>`;
+list.insertAdjacentHTML("beforeBegin", desk);
+console.dir(desk);
+console.dir(endList);
+// desk.style.color = "green";
+
+list.removeChild(endList);
+afterList.remove();
+
+list.innerHTML = "";
+list.innerHTML = `<li style="color:blue">1</li> <li>2</li> <li>3</li>`;
+
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  console.log("Обработка клика по кнопке");
+  console.log(event.type);
+  console.log(event.target); // элемент на котором произошло событие
+  console.log(event.currentTarget); // элемент на котором сработал обработчик события
+  list.style.border = "10px solid red";
+});
+
+const form = document.querySelector("form");
+const input = document.querySelector(".input");
+input.addEventListener("input", () => {
+  console.log("Обработка события input");
+  console.dir(input.value);
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("Обработка события submit");
+  console.dir(form);
+});
+
+input.addEventListener("focus", () => {
+  input.style.backgroundColor = "green";
+  console.dir(input);
+});
+
+input.addEventListener("blur", () => {
+  input.style.border = "2px solid red";
+  input.style.backgroundColor = "white";
+  console.dir(input);
+});
+
+input.addEventListener("change", () => {
+  console.dir(input.value);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Произошла загрузка страницы");
+});
+
+document.addEventListener("load", () => {
+  console.log("Страница загрузилась");
+});
+
+document.addEventListener("beforeunload", () => {
+  confirm("Вы покидаете страницу");
+});
+
+const buttonsList = document.querySelector(".buttons");
+buttonsList.style.border = "2px solid";
+buttonsList.addEventListener("click", () => {
+  console.log(event.target);
+  console.log(event.currentTarget);
+});
+
+form.addEventListener("input", () => {
+  console.log(event.target);
+  console.log(event.currentTarget);
+  let value = event.target;
+  console.log(value.value);
+});
